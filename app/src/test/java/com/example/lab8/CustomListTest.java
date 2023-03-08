@@ -90,4 +90,18 @@ public class CustomListTest {
         assertEquals(list.getCount(), listSize);
     }
 
+    /**
+     * Test countCity method.
+     * Ensure it works for empty list and adding multiple cities.
+     */
+    @Test
+    public void testCountCities() {
+        CustomList list = MockCityList();
+        assertEquals(0, list.countCities());
+        list.addCity(MockCity());
+        assertEquals(1, list.countCities());
+        list.addCity(MockCity());
+        assertEquals(2, list.countCities());
+    }
+
 }
