@@ -74,7 +74,11 @@ public class CustomList extends ArrayAdapter<City> {
      * Remove the given city from the list
      * @param city - the city to remove
      */
-    public void deleteCity(City city) {
-
+    public void deleteCity(City city) throws IllegalArgumentException {
+        if (cities.contains(city)) {
+            cities.remove(city);
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
 }
